@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0deg 0% 80.13%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  body {
+    @apply font-sans bg-background text-foreground h-screen;
+  }
+}
