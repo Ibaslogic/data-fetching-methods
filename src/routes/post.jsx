@@ -1,8 +1,8 @@
 // import { useEffect, useState } from 'react';
-// import { useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import { fetcherWithFetch } from '../lib/fetcherWithFetch';
-import useSWR from 'swr';
+// import useSWR from 'swr';
 
 // import { getRequestWithNativeFetch } from '../lib/fetcherWithFetch';
 // import { fetcherWithAxios } from '../lib/fetcherWithAxios';
@@ -15,30 +15,30 @@ export default function Post() {
   // const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(null);
 
-  const {
-    data,
-    error,
-    isLoading: loading,
-  } = useSWR(
-    `https://jsonplaceholder.typicode.com/posts/${postId}`,
-    fetcherWithFetch,
-    {
-      dedupingInterval: 1000 * 60 * 10, // cache for 10 minutes
-    }
-  );
-
   // const {
   //   data,
   //   error,
-  //   isPending: loading,
-  // } = useQuery({
-  //   queryKey: ['post', parseInt(postId)],
-  //   queryFn: () =>
-  //     fetcherWithFetch(
-  //       `https://jsonplaceholder.typicode.com/posts/${postId}`
-  //     ),
-  //   staleTime: 1000 * 60 * 10, // cache for 10 minutes
-  // });
+  //   isLoading: loading,
+  // } = useSWR(
+  //   `https://jsonplaceholder.typicode.com/posts/${postId}`,
+  //   fetcherWithFetch,
+  //   {
+  //     dedupingInterval: 1000 * 60 * 10, // cache for 10 minutes
+  //   }
+  // );
+
+  const {
+    data,
+    error,
+    isPending: loading,
+  } = useQuery({
+    queryKey: ['post', parseInt(postId)],
+    queryFn: () =>
+      fetcherWithFetch(
+        `https://jsonplaceholder.typicode.com/posts/${postId}`
+      ),
+    staleTime: 1000 * 60 * 10, // cache for 10 minutes
+  });
 
   // const {
   //   isLoading: loading,

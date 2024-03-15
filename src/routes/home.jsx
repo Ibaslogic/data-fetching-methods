@@ -2,8 +2,8 @@
 // import FetchPostRequest from '../components/FetchPostRequest';
 // import Axios from '../components/Axios';
 // import ReactFetchHook from '../components/ReactFetchHook';
-// import ReactQuery from '../components/ReactQuery';
-import FetchWithSwr from '../components/FetchWithSwr';
+import ReactQuery from '../components/ReactQuery';
+// import FetchWithSwr from '../components/FetchWithSwr';
 
 import Container from '../components/Container';
 
@@ -23,8 +23,8 @@ const Home = () => {
           {/* <FetchPostRequest /> */}
           {/* <Axios /> */}
           {/* <ReactFetchHook /> */}
-          {/* <ReactQuery /> */}
-          <FetchWithSwr />
+          <ReactQuery />
+          {/* <FetchWithSwr /> */}
         </section>
       </Container>
     </div>
